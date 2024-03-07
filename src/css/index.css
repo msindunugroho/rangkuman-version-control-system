@@ -1,14 +1,21 @@
+@import url('./components/navigation.css');
+@import url('./components/typography.css');
+@import url('./components/card_navigation.css');
+@import url('./components/pre_iframe_and_img.css');
+@import url('./components/expand_list.css');
+
 :root {
     --first-col: rgb(0, 0, 0);
     --second-col:#202020;
-    --third-col: rgb(240, 80, 50, 0.295);
-    --fourth-col:rgb(240, 80, 50);
+    --third-col: rgba(255, 208, 0, 0.295);
+    --fourth-col: rgb(217, 255, 0);
 }
-
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+body {
     background-color: var(--first-col);
     font-family: "Courier New", monospace;
     color: var(--fourth-col);
@@ -16,200 +23,25 @@ body {
     flex-direction: column;
 }
 
-/* Global Element  Style */
-h1, h2, h3, h4, h5, h6 {
-    text-transform: capitalize;
-    padding: 0;
-    margin: 15px 0px -10px 0px;
-    border-bottom: 2px groove var(--fourth-col);
-}
-
-pre:has(p, h1, h2, h3, h4, h5, h6) {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-p, pre {
-    line-height: 20px;
-    font-size: 16px;
-}
-b {
-    background-color:var(--third-col);
-    color: var(--fourth-col);
-    padding: 2px 5px 5px 5px;
-    border-radius: 4px;
-}
-pre {
-    background-color: var(--third-col);
-    min-width: 300px;
-    max-width: 800px;
-    min-height: max-content;
-    max-height: 300px;
-    padding: 45px 5px 20px;
-    position: relative;
-    border-radius: 6px;
-    overflow: auto;
-    border: 1px solid var(--fourth-col);
-}
-pre::before {
-    content: "Example:";
-    border-bottom: 1px solid var(--fourth-col);
-    font-size: 20px;
-    font-weight: 800;
-    font-style: italic;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-}
-iframe {
-    background-color: var(--third-col);
-    min-width: 800px;
-    max-width: calc(100vw - 100px);
-    min-height: 300px;
-    resize: both;
-    border-radius: 6px;
-    overflow: auto;
-    border: 1px solid var(--fourth-col);
-    margin: 15px 0px;
-}
-strong {
-    font-weight: normal;
-    background-color:rgba(255, 81, 0, 0.295);
-    color: var(--fourth-col);
-    padding: 5px;
-    border-radius: 4px;
-}
-u {
-    text-decoration: none;
-    background-color:var(--third-col);
-    color: var(--fourth-col);
-    padding: 5px .5px;
-    border: 1px solid white;
-    border-radius: 4px;
-}
-ol {
-    width: 97vw;
+/* main-content */
+main {    
+    width: 100vw;
+    height: max-content;
+    margin-top: 65px;
+    padding: 20px 40px;
     display: flex;
     flex-flow: column;
-    gap: 8px 0px;
-}
-img {
-    width: 400px;
-    align-self: center;
-    border: 1.5px solid var(--fourth-col);
-    transition: .2s ease;
-}
-img:hover {
-    transform: scale(3.3);
-    z-index: 5;
-    border: unset;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px 3px rgba(0, 255, 0, .5);
-}
-
-
-/* navigation */
-nav {
-    width: 100%;
-    height: 65px;
-    background-color: #202020;
-    box-shadow: 0px 1px 5px rgba(245, 245, 245, 0.4);
-    padding: 0 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    place-content: start;
     align-items: center;
-    position: fixed;
-    z-index: 10;
+    gap: 10vh;
 }
-nav > .nav_title > a {
-    text-decoration: none;
-    color: var(--fourth-col);
-    font-size: 28px;
-    font-weight: 800;
-}
-nav .nav_bar {
-    min-width: 300px;
-    max-width: 330px;
-    min-height: max-content;
-    max-height: 300px;
-    transition: .2s ease-in-out;
-    overflow: auto;
-    border: 2px groove var(--fourth-col);
-    display: flex;
-    position: fixed;
-    right: -360px;
-    top: 75px;
-    border-radius: 5px;
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px;
-    background-color: #202020;
-}
-nav .nav_bar a {
-    color: var(--fourth-col);
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-.nav_link:hover a {
-    background-color: var(--third-col);
-}
-nav .nav_menu {
-    position: absolute;
-    right: 20px;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: 1px solid var(--fourth-col);
-}
-nav .nav_menu:hover {
-    box-shadow: 0px 0px 3px 1px var(--fourth-col);
-}
-
-
-/* main-content */
-main {
-    width: 100%;
-    box-sizing: border-box;
-    height: max-content;
-    margin-top: 70px;
-    padding: 30px 40px ; 
-    display: flex;
-    flex-direction: column;
-    gap: 70px;
-    overflow: hidden;
-}
-
-h1.title {
-    text-transform: uppercase;
-    font-size: 40px;
-    text-align: center;
-    margin: 10px 0 50px;
-}
-
-h2.sub{
-    padding: 0 5px;
-    border-radius: 5px;
-    background-color:var(--third-col);
-    border-bottom: 2px solid var(--fourth-col);
-    width: max-content;
-    text-transform: capitalize;
-}
-
 main a {
     position: relative;
-    color: blue;
-    padding: 2px 5px 5px 20px;
+    color: rgb(30, 30, 248);
+    padding: 3px 5px;
     border-radius: 4px;
-    background-color: lightblue;
+    background-color: rgba(173, 216, 230, 0.5);
     font-weight: 900;
-    text-shadow: .5px .5px 0 yellow;
     font-size: 18px;
     box-sizing: border-box;
 }
@@ -217,116 +49,25 @@ main a:hover {
     color: white;
     background-color: blue;
 }
-/* article > card */
-article {
-    width: 100%;
-    height: max-content;
-    display: grid;
-    grid-template: repeat(3, minmax(12vw, 1fr) / repeat(2, minmax(7vw, 1fr)));
-    gap:3vw;
-    justify-content: center; 
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    */
+
+/* article > module */
+main > article > ol > li {
+    background: rgb(27, 27, 27);
+    padding: 20px;
+    border-radius: 20px;
+    border-bottom: 3px solid var(--fourth-col);
+    box-shadow: 0px 0px 2px 1px var(--third-col);
 }
-article > a.card {
-    width: 22vw;
-    height: 25vh;
-    padding: 15px 10px;
-    background: #202020;
-    color: var(--fourth-col);
+main > article > ol > li:hover {
+    background: rgb(41, 41, 41);
+    box-shadow: 0px 0px 4px 2px var(--third-col);
+}
+main > article > ol > li > h2,
+main > article > ol > li > h3 {
+    margin:10px 0px 15px ;
+    border-bottom: 1px solid var(--fourth-col);
+    width: fit-content;
+    padding: 2px 7px 3px;
     border-radius: 5px;
-    text-align: center;
-    border: 2px solid var(--fourth-col);
-    text-decoration: none;
-    display: flex;
-    flex-flow: column;
-    place-content: center;
-    align-items: center;
-    gap: 2vw;
-}
-article a.card:hover {
-    box-shadow: 0px 0px 3px 1px var(--fourth-col);
-}
-article a.card:nth-child(1) {
-    grid-row:1 / 2;
-    grid-column:1 / 2 ;
-}
-article a.card:nth-child(2) {
-    grid-row:1 / 2;
-    grid-column:2 / 3 ;
-}
-article a.card:nth-child(3) {
-    grid-row:1 / 2;
-    grid-column:3 / 4 ;
-}
-article a.card:nth-child(4) {
-    grid-row:2 / 3;
-    grid-column:1 / 2 ;
-}
-article a.card:nth-child(5) {
-    grid-row:2 / 3;
-    grid-column:2 / 3 ;
-}
-article a.card:nth-child(6) {
-    grid-row:2 / 3;
-    grid-column:3 / 4 ;
-}
-article a.card .doted {
-    width: 100%;
-    display: flex;
-    flex-flow: row;
-    place-content: center;
-    gap: 0 1vw;
-}
-article a.card .doted span {
-    width: .4vw;
-    height: .4vw;
-    border-radius: 50%;
-    background: var(--fourth-col);
-}
-/* expand_list */
-.expand_list {
-    gap: unset;
-    background: rgb(20, 20, 20);
-    border-radius: 30px;
-    margin: 20px 0px;
-    position:relative; 
-}
-.expand_list .expand_arrow {
-    width: calc(100% + 25px);
-    height: max-content;
-    border-radius: 30px;
-    background: rgba(255, 208, 0, 0.295);
-    border: 2px solid rgba(255, 255, 255, 0.582);
-    padding: 5px;
-    cursor: pointer;
-    display: flex;
-    place-content: center start;
-    align-items: center;
-    position:relative;
-    top:0;
-    left:-40px;
-}
-/* .expand_list:has(.expand_list-item) .expand_arrow {
-    margin-bottom: 30px;
-} */
-.expand_list .expand_arrow img {
-    height: 40px;
-    width: auto;
-    border: unset;
-    fill: white;
-    transition: .4s ease-out;
-}
-.expand_list .expand_arrow img:hover {
-    transform:unset;
-    box-shadow: unset;
-}
-/* .expand_off {
-    display:none;
-} */
-.expand_list-item {
-  display: none;
+    background-image: linear-gradient(to top, var(--third-col), rgba(0, 0, 0, 0));
 }

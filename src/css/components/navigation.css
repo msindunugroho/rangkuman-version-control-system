@@ -1,0 +1,63 @@
+/* navigation */
+nav {
+    width: 100%;
+    height: 65px;
+    background-color: #202020;
+    box-shadow: 0px 1px 5px rgba(245, 245, 245, 0.4);
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+}
+nav > .nav_title > a {
+    text-decoration: none;
+    color: var(--fourth-col);
+    font-size: 28px;
+    font-weight: 800;
+}
+nav .nav_bar {
+    min-width: 300px;
+    max-width: 330px;
+    min-height: max-content;
+    max-height: 300px;
+    transition: .2s ease-in-out;
+    overflow: auto;
+    border: 2px groove var(--fourth-col);
+    display: flex;
+    position: fixed;
+    right: -360px;
+    top: 75px;
+    border-radius: 5px;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    background-color: #202020;
+}
+nav .nav_bar a {
+    color: var(--fourth-col);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.nav_link:hover a {
+    background-color: var(--third-col);
+}
+nav .nav_menu {
+    position: absolute;
+    right: 20px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid var(--fourth-col);
+}
+nav .nav_menu:hover {
+    box-shadow: 0px 0px 3px 1px var(--fourth-col);
+}

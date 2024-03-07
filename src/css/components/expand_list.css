@@ -1,0 +1,48 @@
+/* expand_list */
+.expand_list {
+    background: rgb(20, 20, 20);
+    margin: 10px 0 25px 0;
+    border-radius: 30px;
+    position:relative; 
+}
+.expand_list .expand_arrow {
+    width: 100%;
+    height: max-content;
+    border-radius: 30px;
+    background: rgba(255, 208, 0, 0.295);
+    border: 2px solid rgba(255, 255, 255, 0.582);
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    place-content: center start;
+    align-items: center;
+    position: relative;
+}
+.expand_list .expand_arrow::before {
+    content: "";
+    width: calc(100% - 60px);
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    background-color: white;
+
+}
+.expand_list .expand_arrow img {
+    height: 40px;
+    width: auto;
+    border: unset;
+    fill: white;
+    transition: .4s ease-out;
+}
+.expand_list .expand_arrow img:hover {
+    transform:unset;
+    box-shadow: unset;
+}
+/* .expand_off {
+    display:none;
+} */
+.expand_list-item {
+  display: none;
+  padding: 10px;
+}
