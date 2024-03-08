@@ -120,24 +120,72 @@
             <h2>Konsep Dasar GIT</h2>
             <ol>
               <li>
-                <h3>Apa Itu GIT</h3>
+                <!-- apa itu git? -->
+                <h3>Apa Itu GIT?</h3>
                 <p>Git adalah sebuah <i>version control system</i> yang sangat populer yang digunakan untuk mengelola perubahan dalam source code software. Diciptakan oleh Linus Torvalds pada tahun 2005, Git dirancang untuk menjadi ringan, cepat, dan memiliki dukungan untuk kolaborasi yang efisien.</p>
               </li>
+              <!-- instalisasi git -->
               <li>
-                <h3></h3>
-                <p></p>
+                <h3>Instalasi GIT?</h3>
+                <p><a href="https://git-scm.com/" class="doc"></a></p>
+              </li>
+              <!-- konfigurasi name & email -->
+              <li>
+                <h3>Konfigurasi GIT (nama dan email)</h3>
+                <p>Perintah untuk mengatur konfigurasi nama dan email:</p>
+<pre>
+git config --global user.name "input name here"
+git config --global user.email "input email here"
+</pre>
+                <p>Untuk mengetahui nama dan alamat email git</p>
+<pre>
+git config --global user.name
+git config --global user.email
+</pre>
+              </li>
+              <!-- inisialisasi repository lokal -->
+              <li>
+                <h3>Inisialisasi Repository</h3>
+                <p>Masuk ke repository/folder yang ingin di inisialisasi, lalu jalankan code ini:</p>
+<pre>
+git init
+</pre>
+                <p>Jika repository telah terverifikasi terinisialisasi, maka git akan memberikan pesan verifikasi sebagai berikut:</p>
+<pre>
+Initialized empty Git repository in /path/to/your/repository
+</pre>
               </li>
               <li>
-                <h3></h3>
-                <p></p>
-              </li>
-              <li>
-                <h3></h3>
-                <p></p>
-              </li>
-              <li>
-                <h3></h3>
-                <p></p>
+                <!-- add and commit file -->
+                <h3>add dan commit file</h3>
+                <p>Konsep Staging Area dalam Git adalah tahap di antara direktori kerja Anda (working directory) dan repository lokal Anda. Ini adalah tempat di mana Anda menyiapkan perubahan sebelum Anda membuat commit permanen ke repository. Dalam tahap ini, Anda memilih file mana yang akan dimasukkan ke dalam commit berikutnya.</p>
+                <p>Berikut adalah penjelasan langkah-langkah untuk menambahkan file ke staging area dan melakukan commit perubahan ke repository:</p>
+                <ul>
+                  <li>
+                    <h4>Tambahkan file/directory ke staging area</h4>
+<pre>
+// Menambahkan seluruh component(file, folder dsb) di dalam repository
+git add .
+
+// menambahkan component spesifik
+git add "nama_folder/nama_file.txt"
+</pre>
+                  </li>
+                  <li>
+                    <h4>Periksa status staging area</h4>
+                    <p>Perintah ini akan menunjukan file-file yang telah di tambahkan dan atau yang belum di tambahkan ke staging area:</p>
+<pre>
+git status
+</pre>
+                  </li>
+                  <li>
+                    <h4>Lakukan Commit</h4>
+                    <a href="">Standar Baku Pesan Commit</a>
+<pre>
+git commit -am "FIX: sloved carousel bug"
+</pre>
+                  </li>
+                </ul>
               </li>
             </ol>
           </li>
